@@ -49,6 +49,7 @@ public class TrackIconUtils {
   public static final String RUN = "RUN";
   public static final String SKI = "SKI";
   public static final String SNOW_BOARDING = "SNOW_BOARDING";
+  public static final String TRAIN = "TRAIN";
   public static final String WALK = "WALK";
 
   private static final int[] AIRPLANE_LIST = new int[] { R.string.activity_type_airplane,
@@ -70,6 +71,8 @@ public class TrackIconUtils {
       R.string.activity_type_cross_country_skiing, R.string.activity_type_skiing };
   private static final int[] SNOW_BOARDING_LIST = new int[] {
       R.string.activity_type_snow_boarding };
+  private static final int[] TRAIN_LIST = new int[] {
+      R.string.activity_type_train };
   private static final int[] WALK_LIST = new int[] { R.string.activity_type_hiking,
       R.string.activity_type_off_trail_hiking, R.string.activity_type_speed_walking,
       R.string.activity_type_trail_hiking, R.string.activity_type_walking };
@@ -94,6 +97,8 @@ public class TrackIconUtils {
         new Pair<Integer, Integer>(R.string.activity_type_airplane, R.drawable.ic_track_airplane));
     MAP.put(
         BOAT, new Pair<Integer, Integer>(R.string.activity_type_boat, R.drawable.ic_track_boat));
+    MAP.put(
+        TRAIN, new Pair<Integer, Integer>(R.string.activity_type_train, R.drawable.ic_track_train));
   }
 
   private static final float[] REVERT_COLOR_MATRIX = { -1.0f, 0, 0, 0, 255, // red
@@ -171,6 +176,9 @@ public class TrackIconUtils {
     }
     if (inList(context, activityType, SNOW_BOARDING_LIST)) {
       return SNOW_BOARDING;
+    }
+    if (inList(context, activityType, TRAIN_LIST)) {
+      return TRAIN;
     }
     if (inList(context, activityType, WALK_LIST)) {
       return WALK;
