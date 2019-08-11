@@ -531,10 +531,13 @@ public class TrackRecordingService extends Service {
    */
   @VisibleForTesting
   protected void startForegroundService(PendingIntent pendingIntent, int messageId) {
-    NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setContentIntent(
-        pendingIntent).setContentText(getString(messageId))
-        .setContentTitle(getString(R.string.my_tracks_app_name)).setOngoing(true)
-        .setSmallIcon(R.drawable.ic_stat_notify_recording).setWhen(System.currentTimeMillis());
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        .setContentIntent(pendingIntent)
+        .setContentText(getString(messageId))
+        .setContentTitle(getString(R.string.my_tracks_app_name))
+        .setOngoing(true)
+        .setSmallIcon(R.drawable.ic_stat_notify_recording)
+        .setWhen(System.currentTimeMillis());
     startForeground(1, builder.build());
   }
 
